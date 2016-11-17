@@ -3,6 +3,7 @@ var watch = require( 'gulp-watch' );
 var rename = require( 'gulp-rename' );
 var sass = require( 'gulp-sass' );
 var runSequence = require( 'run-sequence' );
+var autoprefixer = require( 'gulp-autoprefixer' );
 
 gulp.task( 'scss', function() {
 	return gulp.src( 'scss/index.scss' )
@@ -11,6 +12,7 @@ gulp.task( 'scss', function() {
 				outputStyle: 'compressed'
 			}).on( 'error', sass.logError )
 		)
+		.pipe( autoprefixer() )
 		.pipe( rename({
 			suffix: '.min',
 			extname: '.css'
