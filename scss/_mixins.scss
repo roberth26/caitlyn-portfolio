@@ -10,3 +10,33 @@
 		margin-right: auto;
 	}
 }
+
+@mixin section( $color: $orange, $first: false ) {
+	height: calc( 100vh + #{$section_offset} );
+	position: relative;
+	@if ( $first == false ) {
+		margin-top: -$section_offset;
+		padding-top: $section_offset;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: $color;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 100vh;
+		left: 0;
+		width: 100%;
+		height: $section_offset;
+		clip-path: polygon( 0% 0%, 100% 0%, 0% 100% );
+		background-color: $color;
+	}
+}

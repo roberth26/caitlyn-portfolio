@@ -1,0 +1,8 @@
+.about {
+	@include section( $color: $orange );
+	z-index: 3;
+
+	&__container {
+		@include container;
+	}
+}

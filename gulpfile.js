@@ -21,7 +21,7 @@ gulp.task( 'scss', function() {
 });
 
 gulp.task( 'watch', function() {
-	watch( 'scss/**/*.scss', function() {
+	watch( [ 'scss/**/*.scss', 'sections/**/*.scss' ], function() {
 		runSequence( [ 'scss' ] );
 	});
 });

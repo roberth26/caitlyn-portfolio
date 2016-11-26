@@ -1,6 +1,6 @@
 .start {
-	height: 100vh;
-	background-color: $green;
+	@include section( $color: $green, $first: true );
+	z-index: 4;
 
 	&__container {
 		@include container;
@@ -8,6 +8,7 @@
 
 	svg {
 		@include center_vertical( $horizontal: true );
+		margin-top: -$section_offset;
 		width: 710px;
 		max-width: 70%;
 
