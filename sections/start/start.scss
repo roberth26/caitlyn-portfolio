@@ -1,0 +1,18 @@
+.start {
+	height: 100vh;
+	background-color: $green;
+
+	&__container {
+		@include container;
+	}
+
+	svg {
+		@include center_vertical( $horizontal: true );
+		width: 710px;
+		max-width: 70%;
+
+		path {
+			fill: white;
+		}
+	}
+}

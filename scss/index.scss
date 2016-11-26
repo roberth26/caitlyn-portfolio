@@ -1,5 +1,12 @@
-@import '_partial';
+@import '_reset';
+@import '_variables';
+@import '_mixins';
+@import '_grid';
 
-body {
-	background-color: yellow;
+@import 'sections/start/start';
+@import 'sections/footer/footer';
+@import 'sections/about/about';
+
+* {
+	box-sizing: border-box;
 }
