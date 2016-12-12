@@ -2,12 +2,29 @@
 @import '_variables';
 @import '_mixins';
 @import '_grid';
+@import '_typography';
+
+@import 'components/menu/Menu';
+@import 'components/section/Section';
+@import 'components/navigation/Navigation';
+@import 'components/portfolio/Portfolio';
+@import 'components/form/Form';
 
 @import 'sections/start/start';
 @import 'sections/footer/footer';
 @import 'sections/about/about';
 @import 'sections/portfolio/portfolio';
+@import 'sections/contact/contact';
 
 * {
 	box-sizing: border-box;
+
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+
+	.wf-loading & {
+		visibility: hidden;
+	}
 }

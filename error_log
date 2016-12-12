@@ -1,0 +1,4 @@
+[05-Dec-2016 06:14:49 UTC] PHP Warning:  require_once(/home/caitlyndc6//components/navigation/Navigation.php): failed to open stream: No such file or directory in /home/caitlyndc6/public_html/index.php on line 6
+[05-Dec-2016 06:14:49 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/caitlyndc6//components/navigation/Navigation.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/caitlyndc6/public_html/index.php on line 6
+[05-Dec-2016 06:15:22 UTC] PHP Warning:  require_once(/home/caitlyndc6//components/navigation/Navigation.php): failed to open stream: No such file or directory in /home/caitlyndc6/public_html/index.php on line 7
+[05-Dec-2016 06:15:22 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/caitlyndc6//components/navigation/Navigation.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/caitlyndc6/public_html/index.php on line 7

@@ -1,13 +1,20 @@
-<section class="about">
-	<div class="about__container">
-		<div class="about__row">
-			<div class="about__col">
+<?php require_once( './components/section/Section.php' ) ?>
 
-			</div>
-			<div class="about__col">
-				<p>Lorem ipsum dolor sit amet, sint feugait ius ex, nam eius ocurreret ea. Ad pri dictas lobortis appellantur, cetero malorum repudiare vis at. Ius cu nullam aliquip, ex elit habeo eos. At vide iuvaret accumsan ius, vim oblique adversarium ex, maiorum pericula per te. Ne mea omittam pericula, ea vis prima philosophia definitiones.</p>
-				<p>Mea cu dolore iudicabit definitiones. Primis iriure disputando pri ea, cu vis fierent perfecto. Nec no wisi malis vituperata, vel ea omnis mollis facilisi. Ut eam iudicabit assentior philosophia, eu vix eros iriure forensibus, et quidam tamquam delectus eam. Vis falli fastidii appellantur cu, an mel quot debet iisque. Te eum option vituperatoribus, ut dicam nostrum vis.</p>
+<?php
+Section([
+	'class' => 'about',
+	'id' => 'about',
+	'content' => function() { ?>
+		<div class="about__container">
+			<div class="about__row">
+				<div class="about__col">
+
+				</div>
+				<div class="about__col">
+					<p>Caitlyn Cardoza was born in the town of Hanford, California and now lives and studies in Fresno, California. She attended high school in Fresno at San Joaquin Memorial and went on to attend the Smittcamp Honors College at Fresno State University. She has attend and volunteered at the Siggraph conference in Anaheim, a gathering of professionals to learn and share new advances in technology and computer graphics, and has participated in the CSU Summer Arts Program in Monterey in the Creature Workshop working with professionals in the field and developing new techniques in clay, Zbrush, and motion-capture. Her mediums of choice are Maya and Zbrush. She has received scholarships for her passion in art as well as for her dedication to high academic performance and community participation. She is finishing her Bachelors of Arts in the field of animation and plans to attend a graduate school in Los Angeles, applying to both Gnomon and UCLA animation Master’s program, to better refine her skills in character modeling and animation. She believes the future of storytelling lies in animation and strives to be a leader in the creative medium.</p>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	<?php }
+]);
+?>

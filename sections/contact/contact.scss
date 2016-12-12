@@ -1,0 +1,19 @@
+.contact {
+	background-color: $blue;
+	height: 100vh;
+
+	&__container {
+		@include container;
+		display: flex;
+	}
+
+	&__col {
+		flex: 1;
+	}
+
+	&__form {
+		width: 100%;
+		max-width: 360px;
+		margin: 0 auto;
+	}
+}

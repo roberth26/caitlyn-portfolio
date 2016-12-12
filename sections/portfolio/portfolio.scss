@@ -1,6 +1,6 @@
-.porfolio {
-	@include section( $color: $white );
-	z-index: 3;
+.portfolio {
+	background-color: $white;
+	height: 100vh;
 
 	&__container {
 		@include container;

@@ -1,0 +1,90 @@
+.form {
+
+	&__input-group {
+		display: block;
+		margin-bottom: $gutter;
+
+		&__label {
+			display: block;
+			font-size: 1.8rem;
+			margin-bottom: $gutter / 2;
+			color: white;
+		}
+
+		&__field,
+		&__textarea {
+			display: block;
+			width: 100%;
+			appearance: none;
+			border: 0;
+			border-radius: 0;
+			height: 50px;
+			background-color: lighten( saturate( $blue, 13% ), 1% );
+			padding: 0 20px;
+			color: white;
+			font-size: 1.8rem;
+			font-family: $font;
+			box-shadow: none;
+			transition: all .5s ease;
+			font-weight: 300;
+			cursor: pointer;
+
+			&:focus {
+				outline: 0;
+				box-shadow: 0 3px 7px rgba( black, .1 );
+			}
+
+			&:hover {
+				box-shadow: 0 4px 9px rgba( black, .15 );
+			}
+		}
+
+		&__textarea {
+			height: 170px;
+			padding: 15px 20px;
+		}
+
+		::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			color: rgba( black, .25 );
+		}
+
+		::-moz-placeholder { /* Firefox 19+ */
+			color: rgba( black, .25 );
+		}
+
+		:-ms-input-placeholder { /* IE 10+ */
+			color: rgba( black, .25 );
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+			color: rgba( black, .25 );
+		}
+	}
+
+	&__btn {
+		display: block;
+		appearance: none;
+		border: 0;
+		border-radius: 0;
+		width: 100%;
+		text-align: center;
+		height: 50px;
+		color: white;
+		background-color: $orange;
+		box-shadow: none;
+		transition: all .5s ease;
+		cursor: pointer;
+		font-family: $font;
+		font-size: 1.8rem;
+
+		&:focus {
+			outline: 0;
+			box-shadow: 0 3px 7px rgba( black, .1 );
+		}
+
+		&:hover {
+			box-shadow: 0 4px 9px rgba( black, .15 );
+			background-color: darken( saturate( $orange, 5% ), 5% );
+		}
+	}
+}

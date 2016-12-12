@@ -1,0 +1,11 @@
+.portfolio {
+	display: flex;
+
+	&__project-grid {
+		flex: 1;
+	}
+
+	&__project-view {
+		flex: 1;
+	}
+}

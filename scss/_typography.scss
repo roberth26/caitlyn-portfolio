@@ -1,0 +1,57 @@
+$font: 'museo-slab';
+
+html {
+    font-size: 62.5%; // 10px
+}
+
+body {
+	font-family: $font;
+	font-size: 1.6rem; // 16px
+	font-weight: 300;
+	line-height: 1;
+    color: inherit;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 1.6rem;
+    margin-bottom: $gutter;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+strong {
+    font-size: inherit;
+    line-height: normal;
+    font-weight: 700;
+    color: inherit;
+}
+
+h1 {
+	font-family: $font;
+	font-size: 2.8rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+h2 {
+	font-family: $font;
+	font-size: 2.4rem;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 2.2rem;
+}
+
+h4 {
+	font-size: 2rem;
+}
+
+h5 {
+	font-size: 1.8rem;
+}

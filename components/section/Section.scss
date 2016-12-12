@@ -1,0 +1,30 @@
+.section {
+	$bottom_height: 40px;
+	$bottom_height_desktop: 80px;
+	$padding_top: 40px;
+	position: relative;
+	min-height: 100vh;
+	padding-top: $bottom_height + $padding_top;
+
+	@media ( min-width: $desktop_min ) {
+		padding-top: $bottom_height_desktop + $padding_top;
+	}
+
+	&__bottom {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: $bottom_height;
+		background: inherit;
+		clip-path: polygon(
+			0% 0%,
+			100% 0%,
+			0% 100%
+		);
+
+		@media ( min-width: $desktop_min ) {
+			height: $bottom_height_desktop;
+		}
+	}
+}

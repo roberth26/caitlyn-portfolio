@@ -1,6 +1,6 @@
 .start {
-	@include section( $color: $green, $first: true );
-	z-index: 4;
+	background-color: $green;
+	height: 100vh;
 
 	&__container {
 		@include container;
@@ -12,7 +12,7 @@
 		width: 710px;
 		max-width: 70%;
 
-		path {
+		* {
 			fill: white;
 		}
 	}

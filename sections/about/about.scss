@@ -1,6 +1,6 @@
 .about {
-	@include section( $color: $orange );
-	z-index: 3;
+	background-color: $orange;
+	height: 100vh;
 
 	&__container {
 		@include container;

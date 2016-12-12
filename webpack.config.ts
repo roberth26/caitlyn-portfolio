@@ -16,7 +16,13 @@ module.exports = {
 				loader: 'babel',
 				exclude: /node_modules/,
 				query: {
-					presets: [ 'es2015' ]
+					presets: [ 'es2015', 'stage-0' ],
+					plugins: [
+						[ 'transform-react-jsx', {
+							'pragma': 'html' // default pragma is React.createElement
+	    				}],
+    					["jsx-pragmatic", { "module": "snabbdom/h", "import": "h" }]
+    				]
 				}
 				
 			}
