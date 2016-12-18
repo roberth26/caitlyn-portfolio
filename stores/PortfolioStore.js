@@ -7,8 +7,8 @@ export default class PortfolioStore {
 	@observable activeImage;
 	@observable viewportIsOpen;
 
-	constructor() {
-		this.projects = window[ '__PORTFOLIO_DATA__' ]
+	constructor( projects ) {
+		this.projects = projects
 			.map( ( project, index ) => {
 				project.id = shortid.generate();
 				project.images = this.assignIdToImages( project.images );
