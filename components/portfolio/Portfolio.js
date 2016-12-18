@@ -6,54 +6,46 @@ const patch = Snabbdom.init([
 	require( 'snabbdom/modules/eventlisteners' )
 ]);
 import { html } from 'snabbdom-jsx';
-import shortid from 'shortid';
-import ProjectGrid from '../projectgrid/ProjectGrid';
-import ProjectView from '../projectview/ProjectView';
+import { autorun } from 'mobx';
+import ProjectGrid from './projectgrid/ProjectGrid';
+import ProjectView from './projectview/ProjectView';
+import PortfolioStore from '../../stores/PortfolioStore';
 
 export default class Portfolio {
 	constructor( el ) {
 		this.el = el;
-		this.state = this.getInitialState();
-		this.update(); // initial mount and render
+		this.store = new PortfolioStore();
+		autorun( this.update ); // initial mount and render
 	}
 
-	getInitialState = () => {
-		let projects = window.__PORTFOLIO_DATA__;
-		projects = projects.map( ( project, index ) => {
-			project.isActive = index == 0 ? true : false;
-			project.id = shortid.generate();
-			return project;
-		});
-		return {
-			projects: projects,
-			activeProject: projects[ 0 ]
-		};
-	}
-
-	setActiveProject = id => {
-		const project = this.state.projects.find( project => {
-			return project.id == id;
-		});
-		if ( project ) {
-			this.state.activeProject = project;
-			this.update();
-		}
-	}
-
-	render = props => {
-		const { projects, onClick, activeProject } = props;
+	render = ( props ) => {
+		const {
+			projects,
+			onSelectProject,
+			onSelectImage,
+			onPrev,
+			onNext,
+			activeImage,
+			activeProject,
+			viewportOpen
+		} = props;
 		return (
 			<div className="portfolio">
 				<div className="portfolio__project-grid">
 					<ProjectGrid
 						projects={projects}
-						onSelect={this.setActiveProject}
+						onSelectProject={onSelectProject}
+						activeProject={activeProject}
 					/>
 				</div>
 				<div className="portfolio__project-view">
 					<ProjectView
+						onPrev={onPrev}
+						onNext={onNext}
+						activeImage={activeImage}
 						project={activeProject}
-						onClick={onClick}
+						onSelectImage={onSelectImage}
+						viewportOpen={viewportOpen}
 					/>
 				</div>
 			</div>
@@ -61,12 +53,19 @@ export default class Portfolio {
 	}
 
 	update = () => {
+		const Portfolio = this.render;
 		this.el = patch(
 			this.el,
-			this.render({
-				...this.state,
-				onClick: this.update
-			})
+			<Portfolio
+				projects={this.store.projects}
+				onSelectProject={this.store.setActiveProjectById}
+				onSelectImage={this.store.setActiveImage}
+				onPrev={this.store.prevProject}
+				onNext={this.store.nextProject}
+				activeImage={this.store.activeImage}
+				activeProject={this.store.activeProject}
+				viewportOpen={this.store.viewportIsOpen}
+			/>
 		);
 	}
 }

@@ -21,7 +21,8 @@ module.exports = {
 						[ 'transform-react-jsx', {
 							'pragma': 'html' // default pragma is React.createElement
 	    				}],
-    					["jsx-pragmatic", { "module": "snabbdom/h", "import": "h" }]
+    					["jsx-pragmatic", { "module": "snabbdom/h", "import": "h" }],
+    					[ 'transform-decorators-legacy' ]
     				]
 				}
 				

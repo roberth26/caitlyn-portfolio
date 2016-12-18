@@ -1,0 +1,9 @@
+.image-picker {
+	display: flex;
+
+	&__item {
+		&--active {
+			border: 1px solid red;
+		}
+	}
+}
