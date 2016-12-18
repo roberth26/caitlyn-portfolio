@@ -1,6 +1,6 @@
 import { html } from 'snabbdom-jsx';
 
-export default function AlternateImages( props ) {
+export default function ImagePicker( props ) {
 	const {
 		images,
 		activeImage,

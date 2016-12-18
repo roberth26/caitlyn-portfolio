@@ -1,5 +1,5 @@
 import shortid from 'shortid';
-import { observable } from 'mobx';
+import { observable, autorun } from 'mobx';
 
 export default class PortfolioStore {
 	@observable projects;
@@ -18,6 +18,8 @@ export default class PortfolioStore {
 		this.activeImage = this.activeProject.images[ 0 ];
 		this.viewportIsOpen = true;
 	}
+
+	onChange = fn => autorun( fn.bind( null, this ) );
 
 	assignIdToImages = images => {
 		return images.map( image => {

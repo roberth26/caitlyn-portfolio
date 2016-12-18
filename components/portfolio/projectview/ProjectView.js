@@ -1,7 +1,7 @@
 import { html } from 'snabbdom-jsx';
 import ImagePicker from '../imagepicker/ImagePicker';
 
-export default function Portfolio( props ) {
+export default function ProjectView( props ) {
 	const {
 		onPrev,
 		onNext,
