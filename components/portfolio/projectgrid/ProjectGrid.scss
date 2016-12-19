@@ -1,7 +1,48 @@
+@import '../../../scss/_variables';
+
 .project-grid {
+	display: flex;
+
 	&__item {
+		position: relative;
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: calc( 100% / 3 );
+
 		&--active {
 			border: 1px solid red;
+		}
+
+		&:hover,
+		&:active {
+			.project-grid__item__overlay {
+				opacity: 1;
+			}
+		}
+
+		&__overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transition: all .25s ease;
+			opacity: 0;
+			background-color: rgba( $orange, .75 );
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			padding: 5px;
+
+			&__title {
+				font-size: 1.8rem;
+				margin-bottom: 5px;
+			}
+
+			&__date {
+				font-size: 1.4rem;
+			}
 		}
 	}
 }

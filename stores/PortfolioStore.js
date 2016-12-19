@@ -29,15 +29,17 @@ export default class PortfolioStore {
 	}
 
 	setActiveProject = project => {
+		if ( project.id == this.activeProject.id ) return;
 		this.viewportIsOpen = false;
 		setTimeout( () => {
 			this.activeProject = project;
-			this.activeImage = this.activeProject.images[ 0 ];
+			this.setActiveImage( project.images[ 0 ] );
 			this.viewportIsOpen = true;
-		}, 400 );
+		}, 400 ); // matches css transition
 	}
 
 	setActiveProjectById = id => {
+		if ( id == this.activeProject.id ) return;
 		const project = this.projects.find( project => {
 			return project.id == id;
 		});

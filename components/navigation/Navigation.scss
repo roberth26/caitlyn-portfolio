@@ -6,6 +6,24 @@
 	transform: translateY( -50% );
 	z-index: 200;
 
+	&--dark {
+		.navigation__link {
+			&:before {
+				border-color: black;
+			}
+
+			&:hover {
+				&:before {
+					border: 2px solid black;
+				}
+			}
+
+			&__label {
+				color: black;
+			}
+		}
+	}
+
 	&__list {
 		&__item {
 			margin-bottom: 15px;
@@ -48,8 +66,6 @@
 
 		&:hover {
 			&:before {
-				//width: 32px;
-				//height: 32px;
 				transform: scale( 1.6 );
 				border: 2px solid white;
 			}

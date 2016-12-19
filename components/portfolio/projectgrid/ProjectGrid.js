@@ -15,15 +15,17 @@ export default function ProjectGrid( props ) {
 				}
 				return (
 					<a
+						className={className}
 						href="#"
 						on-click={ event => {
 							event.preventDefault();
 							onSelectProject( project.id );
 						}}
 					>
-						<div className={className}>
-							<img src={project.images[ 0 ].thumbnail} />
-							<h2>{project.title}</h2>
+						<img src={project.images[ 0 ].thumbnail} />
+						<div className="project-grid__item__overlay">
+							<h2 className="project-grid__item__overlay__title">{project.title}</h2>
+							<h3 className="project-grid__item__overlay__date">{project.date}</h3>
 						</div>
 					</a>
 				);

@@ -5,46 +5,33 @@ export default class Navigation {
 	constructor() {
 		this.el = document.getElementById( 'navigation' );
 		this.items = [ ...this.el.querySelectorAll( '.navigation__link' ) ]
-			.map( item => {
-				return {
-					element: item,
-					targetElement: document.querySelector( item.dataset.elementSelector ),
-					path: item.getAttribute( 'href' )
-				};
-			});
-		let target = this.getMatchingItem();
-		if ( target ) target.targetElement.scrollIntoView();
-		this.userScroll = true;
-		this.updateActive();
-		this.disableScroll = false;
+			.map( item => ({
+				element: item,
+				targetElement: document.querySelector( item.dataset.elementSelector ),
+				path: item.getAttribute( 'href' )
+			}));
+		this.update();
 		window.addEventListener( 'hashchange', this.handleHashChange );
-		window.addEventListener( 'scroll', this.handleScroll );
+		window.addEventListener( 'scroll', debounce( 300, this.update ) );
 	}
 
-	handleHashChange = event => {
-		console.log( 'handleHashChange()' )
-		if ( event ) event.preventDefault();
-		let target = this.getMatchingItem().targetElement;
-		if ( !target ) return;
-		if ( !this.disableScroll ) {
-			jump( target, {
-				callback: () => {
-					this.updateActive();
-				},
-				duration: 750
-			});
-		}
-		this.disableScroll = false;
-	};
+	isElementBright = el => {
+		const tolerance = 180;
+		const color = window.getComputedStyle( el, null )
+			.getPropertyValue( 'background-color' )
+			.split( '(' )[ 1 ]
+			.split( ')' )[ 0 ]
+			.split( ',' )
+			.map( val => Number.parseInt( val.trim() ) );
+	    const brightness = (
+	    	( color[ 0 ] * 299 )
+	    	+ ( color[ 1 ] * 587 )
+	    	+ ( color[ 2 ] * 114 )
+	    ) / 1000;
+	    return brightness >= tolerance;
+	}
 
-	handleScroll = debounce( 300, event => {
-		console.log( 'handleScroll()' );
-		this.disableScroll = true;
-		location.hash = this.getMostVisible( this.items ).path;
-		this.updateActive();
-	});
-
-	getMostVisible = ( items ) => {
+	getMostVisible = items => {
 		let windowTop = document.documentElement.scrollTop;
 		let windowBottom = windowTop + window.innerHeight;
 		return items.reduce( ( mostVisible, current ) => {
@@ -70,21 +57,39 @@ export default class Navigation {
 		}, items[ 0 ] );
 	};
 
+	handleHashChange = event => {
+		if ( event ) event.preventDefault();
+		let target = this.getMatchingItem().targetElement;
+		if ( !target ) return;
+		jump( target, {
+			callback: this.update,
+			duration: 750
+		});
+	};
+
 	getMatchingItem = () => {
 		return this.items.find( ( { element } ) => {
 			return element.getAttribute( 'href' ) == location.hash;
 		});	
 	};
 
-	updateActive = () => {
-		let matchingItem = this.getMatchingItem();
-		if ( !matchingItem ) return;
-		matchingItem = matchingItem.element;
-		matchingItem.classList.add( 'navigation__link--active' );
+	update = () => {
+		const {
+			targetElement: scrolledEl
+		} = this.getMostVisible( this.items );
+		const matchingItem = this.items.find( item => (
+			item.targetElement == scrolledEl 
+		));
+		matchingItem.element.classList.add( 'navigation__link--active' );
 		this.items
-			.filter( ( { element } ) => element != matchingItem )
+			.filter( ( { element } ) => !matchingItem.element.isEqualNode( element ) )
 			.forEach( ( { element } ) => {
 				element.classList.remove( 'navigation__link--active' );
 			});
+		if ( this.isElementBright( scrolledEl ) ) {
+			this.el.classList.add( 'navigation--dark' );
+		} else {
+			this.el.classList.remove( 'navigation--dark' );
+		}
 	};
 }
