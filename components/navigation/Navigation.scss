@@ -9,12 +9,12 @@
 	&--dark {
 		.navigation__link {
 			&:before {
-				border-color: black;
+				border-color: $grey;
 			}
 
 			&:hover {
 				&:before {
-					border: 2px solid black;
+					border: 2px solid $grey;
 				}
 			}
 

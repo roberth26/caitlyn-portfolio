@@ -2,6 +2,12 @@
 	background-color: $blue;
 	height: 100vh;
 
+	&__title {
+		margin-bottom: 50px;
+		color: white;
+		text-align: center;
+	}
+
 	&__container {
 		@include container;
 		display: flex;

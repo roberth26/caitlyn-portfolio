@@ -7,7 +7,7 @@ Section([
 	'id' => 'portfolio',
 	'content' => function() { ?>
 		<div class="portfolio__container">
-			<h1>portfolio</h1>
+			<h1 class="portfolio__title">My Work</h1>
 			<?php Portfolio() ?>
 		</div>
 	<?php }

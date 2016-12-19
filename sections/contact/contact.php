@@ -6,6 +6,7 @@ Section([
 	'class' => 'contact',
 	'id' => 'contact',
 	'content' => function() { ?>
+		<h1 class="contact__title">Contact Me</h1>
 		<div class="contact__container">
 			<div class="contact__col">
 				<div class="contact__form">

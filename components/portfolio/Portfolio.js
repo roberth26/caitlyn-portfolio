@@ -14,15 +14,15 @@ export default function Portfolio( props ) {
 		viewportOpen
 	} = props;
 	return (
-		<div className="portfolio">
-			<div className="portfolio__project-grid">
+		<div className="portfolio-component">
+			<div className="portfolio-component__project-grid">
 				<ProjectGrid
 					projects={projects}
 					onSelectProject={onSelectProject}
 					activeProject={activeProject}
 				/>
 			</div>
-			<div className="portfolio__project-view">
+			<div className="portfolio-component__project-view">
 				<ProjectView
 					onPrev={onPrev}
 					onNext={onNext}

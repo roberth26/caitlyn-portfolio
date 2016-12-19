@@ -12,8 +12,27 @@
 	&__copyright {
 		text-align: center;
 		color: $blue;
-		margin: 0;
+		margin-bottom: 10px;
 		font-size: 1.4rem;
 		margin-top: 100px;
+	}
+
+	&__credits {
+		text-align: center;
+		color: $blue;
+		margin: 0;
+		font-size: 1.4rem;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+			font-weight: bold;
+
+			&:hover,
+			&:active,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
 	}
 }

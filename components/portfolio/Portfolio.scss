@@ -2,16 +2,18 @@
 @import 'imagepicker/ImagePicker';
 @import 'projectgrid/ProjectGrid';
 
-.portfolio {
+.portfolio-component {
 	@include clearfix;
 
 	&__project-grid {
 		float: left;
-		width: 33.3333333%;
+		width: 200px;
+		padding: 0 15px;
 	}
 
 	&__project-view {
 		float: left;
-		width: 66.6666666%;
+		width: calc( 100% - 200px );
+		padding: 0 15px;
 	}
 }

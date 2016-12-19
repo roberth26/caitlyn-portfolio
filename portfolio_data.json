@@ -1,7 +1,7 @@
 [
 	{
 		"title": "Some Project",
-		"description": "Lorem ipsum dolor sit amet, sea ne noluisse salutatus, cu eius iudico aliquip duo, ea habemus persecuti mea. Te tantas meliore menandri qui, eros menandri ne per. Sea et vivendo democritum, tempor altera definitiones ex vim, te probo verterem nec. In per modo gubergren, noster mediocrem te eum, pro ill ud quodsi aliquam at. An has paulo ceteros petentium, eu mel mundi euismod nusquam.",
+		"description": "<p>Lorem ipsum dolor sit amet, sea ne noluisse salutatus, cu eius iudico aliquip duo, ea habemus persecuti mea. Te tantas meliore menandri qui, eros menandri ne per. Sea et vivendo democritum, tempor altera definitiones ex vim, te probo verterem nec. In per modo gubergren, noster mediocrem te eum, pro ill ud quodsi aliquam at. An has paulo ceteros petentium, eu mel mundi euismod nusquam.</p>",
 		"date": "1/20/2016",
 		"tools": [
 			"Paper", 
@@ -24,7 +24,7 @@
 	},
 	{
 		"title": "Another Project",
-		"description": "Et cum apeirian disputationi interpretaris, decore postea semper vis eu. Ad ius mollis timeam deserunt. Id pro modus dicant percipitur, nam eius probo eu. Quot perpetua suavitate no sea, soleat virtute quaestio ut ius. Qui te adhuc suavitate conclusionemque.",
+		"description": "<p>Et cum apeirian disputationi interpretaris, decore postea semper vis eu. Ad ius mollis timeam deserunt. Id pro modus dicant percipitur, nam eius probo eu. Quot perpetua suavitate no sea, soleat virtute quaestio ut ius. Qui te adhuc suavitate conclusionemque.</p>",
 		"date": "2/8/2016",
 		"tools": [
 			"Maya",
@@ -47,7 +47,7 @@
 	},
 	{
 		"title": "Project",
-		"description": "An mandamus gloriatur theophrastus vel. Ne quo ipsum graecis vituperatoribus, veniam aliquando est ut. Qui latine ullamcorper an. Illud laboramus in his. An civibus antiopam eam, labore nostrum praesent cu pro, id idque scripta pri.",
+		"description": "<p>An mandamus gloriatur theophrastus vel. Ne quo ipsum graecis vituperatoribus, veniam aliquando est ut. Qui latine ullamcorper an. Illud laboramus in his. An civibus antiopam eam, labore nostrum praesent cu pro, id idque scripta pri.</p>",
 		"date": "3/21/2016",
 		"tools": [
 			"3ds Max",
@@ -70,7 +70,7 @@
 	},
 	{
 		"title": "An Awesome Project",
-		"description": "Ad discere sanctus feugait sea, vix ut zril impetus iudicabit, nam impedit dissentiunt ea. Eu mei graeco pertinax percipitur, sed ut option quaestio, te malorum forensibus vix. Aperiri bonorum vix ea. Meis utinam epicuri quo cu. No per quidam dolores, ferri augue habemus sed no, sed porro graece everti ne.",
+		"description": "<p>Ad discere sanctus feugait sea, vix ut zril impetus iudicabit, nam impedit dissentiunt ea. Eu mei graeco pertinax percipitur, sed ut option quaestio, te malorum forensibus vix. Aperiri bonorum vix ea. Meis utinam epicuri quo cu. No per quidam dolores, ferri augue habemus sed no, sed porro graece everti ne.</p>",
 		"date": "8/8/2016",
 		"tools": [
 			"Z-brush"
@@ -96,7 +96,7 @@
 	},
 	{
 		"title": "Project To Rule Them All",
-		"description": "Ad verterem suscipiantur nam, bonorum definiebas usu ad. Ei utinam dolorum hendrerit nam, ea natum nostrud eruditi pro, eos corrumpit assentior ne. Ius ne vide option mediocritatem. Quo graece pertinacia at, ad qui dicat altera sanctus.",
+		"description": "<p>Ad verterem suscipiantur nam, bonorum definiebas usu ad. Ei utinam dolorum hendrerit nam, ea natum nostrud eruditi pro, eos corrumpit assentior ne. Ius ne vide option mediocritatem. Quo graece pertinacia at, ad qui dicat altera sanctus.</p>",
 		"date": "10/14/2016",
 		"tools": [
 			"Photoshop",

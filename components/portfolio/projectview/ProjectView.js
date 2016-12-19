@@ -16,25 +16,43 @@ export default function ProjectView( props ) {
 	}
 	return (
 		<article className="project">
-			<button on-click={onPrev}>Previous</button>
-			<button on-click={onNext}>Next</button>
-			<div className={className}>
-				<img src={activeImage ? activeImage.full : ''} />
-				<div className="project__viewport__clip-top" />
-				<div className="project__viewport__clip-bottom" />
+			<div className="project__view">
+				<div className={className}>
+					<img
+						className="project__viewport__img"
+						src={activeImage ? activeImage.full : ''}
+					/>
+					<div className="project__viewport__clip-top" />
+					<div className="project__viewport__clip-bottom" />
+					<button
+						className="project__viewport__btn project__viewport__btn--left"
+						on-click={onPrev}
+					>Previous</button>
+					<button 
+						className="project__viewport__btn project__viewport__btn--right"
+						on-click={onNext}
+					>Next</button>
+				</div>
+				<ImagePicker
+					images={project.images}
+					onSelect={onSelectImage}
+					activeImage={activeImage}
+				/>
 			</div>
-			<ImagePicker
-				images={project.images}
-				onSelect={onSelectImage}
-				activeImage={activeImage}
-			/>
-			<h2>{project.title}</h2>
-			<h3>{project.date}</h3>
-			<div className="project__tools">
-				{project.tools.join( ' ' )}
-			</div>
-			<div className="project__description">
-				{project.description}
+			<div className="project__meta">
+				<h2 className="project__title">{project.title}</h2>
+				<h3 className="project__date">{project.date}</h3>
+				<ul className="project__tools">
+					{project.tools.map( ( tool, index ) => (
+						<li className="project__tools__item">
+							{index < project.tools.length - 1 ? `${tool}, ` : tool}
+						</li>
+					))}
+				</ul>
+				<div
+					className="project__description"
+					innerHTML={project.description}
+				></div>
 			</div>
 		</article>
 	);

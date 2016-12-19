@@ -6,6 +6,7 @@ Section([
 	'id' => 'about',
 	'content' => function() { ?>
 		<div class="about__container">
+			<h1 class="about__title">About Me</h1>
 			<div class="about__row">
 				<div class="about__col">
 

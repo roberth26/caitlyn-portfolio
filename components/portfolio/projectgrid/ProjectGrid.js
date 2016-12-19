@@ -22,7 +22,10 @@ export default function ProjectGrid( props ) {
 							onSelectProject( project.id );
 						}}
 					>
-						<img src={project.images[ 0 ].thumbnail} />
+						<img
+							className="project-grid__item__img"
+							src={project.images[ 0 ].thumbnail}
+						/>
 						<div className="project-grid__item__overlay">
 							<h2 className="project-grid__item__overlay__title">{project.title}</h2>
 							<h3 className="project-grid__item__overlay__date">{project.date}</h3>

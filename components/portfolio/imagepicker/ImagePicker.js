@@ -14,15 +14,22 @@ export default function ImagePicker( props ) {
 					className += ` ${className}--active`;
 				}
 				return (
-					<li className={className} key={image.id}>
-						<a 
+					<li
+						className={className}
+						key={image.id}
+					>
+						<a
+							className="image-picker__item__link"
 							href="#"
 							on-click={ event => {
 								event.preventDefault();
 								onSelect( image );
 							}}
 						>
-							<img src={image.thumbnail} />
+							<img
+								className="image-picker__item__img"
+								src={image.thumbnail}
+							/>
 						</a>
 					</li>
 				);
